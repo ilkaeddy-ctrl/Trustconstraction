@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trust Construction (Pty) Ltd - Quality Is Our Speciality</title>
+    <style>
+        /* Basic Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
+        
+        /* Header */
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        
+        .slogan {
+            font-style: italic;
+            color: #f1c40f;
+        }
+        
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #e67e22;
+            padding: 1rem 0;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        nav a:hover {
+            color: #f1c40f;
+        }
+        
+        /* Main Content */
+        .container {
+            width: 80%;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero {
+            background: url('https://images.unsplash.com/photo-1605152276897-4f618f831968?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.6);
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            padding: 2rem;
+        }
+        
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Projects Gallery */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .project-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            transition: transform 0.3s;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .project-card .project-info {
+            padding: 1rem;
+        }
+        
+        .project-card h3 {
+            color: #e67e22;
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            background: #f4f4f4;
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+        }
+        
+        .testimonial {
+            background: white;
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-left: 4px solid #e67e22;
+        }
+        
+        .testimonial p {
+            font-style: italic;
+            margin-bottom: 0.5rem;
+        }
+        
+        .testimonial .author {
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        /* Contact Form */
+        .contact-form {
+            margin-top: 2rem;
+        }
+        
+        .form-group {
+            margin-bottom: 1rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+        }
+        
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 1.5rem 0;
+            background: #2c3e50;
+            color: white;
+            width: 100%;
+        }
+        
+        /* Button */
+        .btn {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+            transition: background 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #d35400;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+            
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            nav a {
+                padding: 0.5rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">TRUST CONSTRUCTION (PTY) LTD</div>
+        <div class="slogan">Quality Is Our Speciality</div>
+    </header>
+    
+    <nav>
+        <a href="#">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#services">Services</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    
+    <div class="hero">
+        <div class="hero-content">
+            <h2>Building Africa's Future</h2>
+            <p>From residential homes to commercial complexes, we deliver excellence across South Africa.</p>
+            <a href="#contact" class="btn">Get a Free Quote</a>
+        </div>
+    </div>
+    
+    <div class="container" id="about">
+        <h2>About Trust Construction</h2>
+        <p>Trust Construction (Pty) Ltd is a premier construction company based in Randburg, dedicated to delivering exceptional quality and craftsmanship in every project we undertake. With years of experience in the industry, we pride ourselves on our commitment to excellence, attention to detail, and customer satisfaction.</p>
+        
+        <p>Our team of skilled professionals works closely with clients to bring their visions to life, whether it's a residential, commercial, or industrial project. We believe in building not just structures, but lasting relationships with our clients.</p>
+    </div>
+    
+    <div class="container" id="projects">
+        <h2>Our African Projects</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Residential Complex in Johannesburg">
+                <div class="project-info">
+                    <h3>Johannesburg Residential Complex</h3>
+                    <p>A modern housing development in Sandton, featuring 20 luxury units with sustainable design.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Commercial Building in Cape Town">
+                <div class="project-info">
+                    <h3>Cape Town Office Tower</h3>
+                    <p>A 12-story commercial building with eco-friendly features in the heart of the CBD.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1600607688969-a5bfcd646154?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="School Renovation in Pretoria">
+                <div class="project-info">
+                    <h3>Pretoria School Renovation</h3>
+                    <p>Complete modernization of a historic school, preserving its heritage while adding modern facilities.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="services">
+        <h2>Our Services</h2>
+        <div class="projects">
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1600585152220-90363fe7e115?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Residential Construction">
+                <div class="project-info">
+                    <h3>Residential Construction</h3>
+                    <p>From custom homes to renovations and extensions, we build living spaces that combine functionality with aesthetic appeal.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Commercial Construction">
+                <div class="project-info">
+                    <h3>Commercial Construction</h3>
+                    <p>We specialize in constructing commercial buildings that meet business needs while adhering to strict safety and quality standards.</p>
+                </div>
+            </div>
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Industrial Construction">
+                <div class="project-info">
+                    <h3>Industrial Construction</h3>
+                    <p>We build durable, functional industrial facilities designed to meet your specific operational requirements.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="testimonials">
+        <h2>What Our Clients Say</h2>
+        <div class="testimonials">
+            <div class="testimonial">
+                <p>"Trust Construction delivered our office building on time and within budget. Their attention to detail was impressive!"</p>
+                <div class="author">— Thabo M., Johannesburg</div>
+            </div>
+            <div class="testimonial">
+                <p>"We hired them for a home renovation, and the results exceeded our expectations. Highly recommended!"</p>
+                <div class="author">— Lerato K., Pretoria</div>
+            </div>
+            <div class="testimonial">
+                <p>"Professional, reliable, and quality workmanship. Will definitely use them for future projects."</p>
+                <div class="author">— David N., Cape Town</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container" id="contact">
+        <h2>Contact Us</h2>
+        <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p><strong>Address:</strong> 334 Cork Ave, Ferndale, Randburg</p>
+            <p><strong>Phone:</strong> +27817817139 / +27725528658</p>
+            <p><strong>Email:</strong> kabambaeddy@gmail.com</p>
+        </div>
+        
+        <div class="contact-form">
+            <h3>Send Us a Message</h3>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2023 Trust Construction (Pty) Ltd. All Rights Reserved. | Quality Is Our Speciality</p>
+    </footer>
+</body>
+</html>
