@@ -1,2 +1,2 @@
 # Trustconstraction
-Construction and renovations
+Construction projects and renovations
